@@ -17,6 +17,7 @@ async function getAllPosts(){
                 <h2>Title: ${post.author}</h2>
                 <p><i>${post.author} | ${editDateData(post.date)}</i></p>
                 <p>${contentMaxLength(post.content)}</p>
+                <span><a href="post.html/${post._id}">Read more</a>
                 </article>
             `
             console.log(post.content.length);
