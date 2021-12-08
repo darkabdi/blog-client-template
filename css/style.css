@@ -1,0 +1,16 @@
+header{
+    text-align: right;
+    padding: 50px;
+}
+
+body, header{
+    padding: 0 25%;
+}
+
+section, article{
+    border: 1px solid black;
+}
+
+article{
+    text-align: center;
+}
