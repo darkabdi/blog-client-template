@@ -18,7 +18,7 @@ function submitUpdate() {
     e.preventDefault();
     let formData = new FormData(form);
     formDataObject = {
-      content: formData.get("content"),
+      "content": formData.get("content"),
     };
 
     try {
