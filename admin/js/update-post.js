@@ -13,9 +13,13 @@ async function getPost(postId) {
     let response = await fetch(`http://localhost:5000/posts/${postId}`);
     let post = await response.json();
 
-    let areaValue = post.content;
+    let textAreaValue = post.content;
+    let authorValue = post.author;
+    let titleValue = post.title;
 
-    document.getElementById("update-content").value = areaValue;
+    document.getElementById("update-content").value = textAreaValue;
+    document.getElementById("author-input").value = authorValue;
+    document.getElementById("title-input").value = titleValue;
   } catch (error) {
     console.log(error);
   }
