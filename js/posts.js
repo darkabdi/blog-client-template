@@ -15,23 +15,13 @@ async function getAllPosts(){
             result += `
                 <article>
                 <h2>Title: ${post.author}</h2>
-                <p><i>${post.author} | ${post.date}</i></p>
-                <p>Content: ${post.content}</p>
+                <p><i>${post.author} | ${editDateData(post.date)}</i></p>
+                <p>${contentMaxLength(post.content)}</p>
+                <span><a href="post.html/${post._id}">Read more</a>
                 </article>
             `
-
-
-            function editDateData (){
-    
-                console.log(post.date)
-                let editedDateData = post.date.replace('T', ' ')
-                editedDateData = editedDateData.slice(0, -8)
-                console.log(editedDateData);
-            }
-            editDateData();
+            console.log(post.content.length);
         }
-
-
 
         blogPostsSection.innerHTML = result;
 
@@ -39,3 +29,20 @@ async function getAllPosts(){
         blogPostsSection.innerHTML = 'You done messed up: ' + error;
     }
 }
+
+function editDateData (date){
+
+    let editedDateData = date.replace('T', ' ');
+    editedDateData = editedDateData.slice(0, -8);
+    return editedDateData;
+}
+
+
+function contentMaxLength (content){
+    if(content.length > 100){
+        let editedContent = content.slice(0, 100) + '...';
+        return editedContent;
+    }else{
+        return content;
+    }
+};
