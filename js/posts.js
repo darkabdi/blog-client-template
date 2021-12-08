@@ -14,13 +14,25 @@ async function getAllPosts(){
         for (post of data){
             result += `
                 <article>
-                <h2>Title: ${post.author}</h2>    
-                <p>Author: ${post.author}</p>
-                <p>Date: ${post.date}
+                <h2>Title: ${post.author}</h2>
+                <p><i>${post.author} | ${post.date}</i></p>
                 <p>Content: ${post.content}</p>
                 </article>
             `
+
+
+            function editDateData (){
+    
+                console.log(post.date)
+                let editedDateData = post.date.replace('T', ' ')
+                editedDateData = editedDateData.slice(0, -8)
+                console.log(editedDateData);
+            }
+            editDateData();
         }
+
+
+
         blogPostsSection.innerHTML = result;
 
     } catch (error) {
