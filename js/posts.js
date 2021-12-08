@@ -11,13 +11,17 @@ async function getAllPosts(){
         let blogPostsSection = document.getElementById('blogPostsSection')
 
         let result = '';
-        for (posts of data){
+        for (post of data){
             result += `
                 <article>
-                    <
+                <h2>Title: ${post.author}</h2>    
+                <p>Author: ${post.author}</p>
+                <p>Date: ${post.date}
+                <p>Content: ${post.content}</p>
+                </article>
             `
         }
-        
+        blogPostsSection.innerHTML = result;
 
     } catch (error) {
         blogPostsSection.innerHTML = 'You done messed up: ' + error;
