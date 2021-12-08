@@ -33,6 +33,8 @@ function submitUpdate(postId) {
 
     updatedContent = {
       content: formData.get("update-text"),
+      author: formData.get("author"),
+      title: formData.get("title"),
     };
 
     try {
