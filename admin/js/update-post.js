@@ -30,7 +30,7 @@ function submitUpdate() {
         body: JSON.stringify(formDataObject),
       });
 
-      location.replace("index.html");
+      console.log("hej");
     } catch (error) {
       console.log(error);
     }
