@@ -10,7 +10,7 @@ async function getPosts(){
      posts +=`
      <li class="list-group-item">
          <p>${post.content}</p>
-         <button id="update" data-id=${post._id}><a href="/Users/BIgABE/Desktop/YH 2021/BlogApiKlient/blog-client-template/admin/update-post.html?id=${post._id}">update</a></button>
+         <button id="update" data-id=${post._id}><a href="admin/update-post.html?id=${post._id}">update</a></button>
      </li>
  `
     }    
