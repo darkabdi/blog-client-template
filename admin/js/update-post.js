@@ -28,7 +28,7 @@ function submitUpdate(postId) {
     let formData = new FormData(form);
 
     formDataObject = {
-      content: formData.get("content"),
+      "content": formData.get("content"),
     };
 
     try {
