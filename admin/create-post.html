@@ -2,10 +2,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create post</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <div id="update-container">
+        <h1>Create a new Post</h1>
+        <form id="create-form">
+            <label for="">Author</label><br>
+            <input name="author" id="author-input" type="text"><br>
+            <label for="">Title</label><br>
+            <input name="title" id="title-input" type="text"><br>
+            <label for="">Content</label><br>
+            <textarea name="create-text" id="create-content" cols="30" rows="10"></textarea>
+            <br><input type="submit" value="Create">
+        </form>
+        <a href="index.html">back</a>
+    </div>
+
+
+
     <script src="js/create-post.js"></script>
 </body>
 </html>
