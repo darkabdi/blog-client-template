@@ -27,8 +27,8 @@ function submitUpdate(postId) {
     e.preventDefault();
     let formData = new FormData(form);
 
-    formDataObject = {
-      "content": formData.get("content"),
+    updatedContent = {
+      content: formData.get("update-text"),
     };
 
     try {
@@ -37,9 +37,10 @@ function submitUpdate(postId) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formDataObject),
+        body: JSON.stringify(updatedContent),
       });
       console.log("hej");
+      console.log(updatedContent);
       location.replace("index.html");
     } catch (error) {
       console.log(error);
