@@ -3,7 +3,8 @@ window.onload = function () {
 };
 // let url = '/localhost:5000/posts'
 async function getPosts(){
-    let response= await (await fetch('http://localhost:5000/posts')).json()
+    try {
+        let response= await (await fetch('http://localhost:5000/posts')).json()
     
     let posts =""
     for (let post of response){
@@ -16,14 +17,22 @@ async function getPosts(){
          <button class="delete" data-id=${post._id}>delete</a></button>
      </li>`
     }
-
+    let content = document.getElementById("content").innerHTML+= posts
+   
+    } catch (error) {
+        
+    }
     let deletebtn = document.getElementsByClassName("delete")
     for (let links of deletebtn){
-        links.addEventListener("click",async function(e){
+        links.addEventListener("click",async(e)=>{
             e.preventDefault()
-            console.log(e.target)
+            await fetch(`http://localhost:5000/posts/${e.target.dataset.id}`,{
+                method:"DELETE"
+            })
+            links.parentElement.remove()
+            console.log(e.target.dataset.id)
         })
     }
-    let content = document.getElementById("content").innerHTML+= posts
+    
    
 }
