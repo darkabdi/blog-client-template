@@ -1,6 +1,6 @@
-window.onload = function() {
-    getPosts()
-}
+window.onload = function () {
+  getPosts();
+};
 // let url = '/localhost:5000/posts'
 async function getPosts(){
     let response= await (await fetch('http://localhost:5000/posts')).json()
