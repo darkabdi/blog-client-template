@@ -7,7 +7,8 @@
 </head>
 <body>
 
-    <div id="update-container">
+    <div id="create-container">
+        <a href="../index.html">Blogg</a>
         <h1>Create a new Post</h1>
         <form id="create-form">
             <label for="">Author</label><br>
@@ -16,10 +17,25 @@
             <input name="title" id="title-input" type="text"><br>
             <label for="">Content</label><br>
             <textarea name="create-text" id="create-content" cols="30" rows="10"></textarea>
-            <br><input type="submit" value="Create">
+            <br>
+           <label for>Tags</label>
+           <br>
+           <select name="tags" id="tags" size="7" multiple>
+               <option value="economics">Economics</option>
+               <option value="politics">Politics</option>
+               <option value="sport">Sport</option>
+               <option value="food">Food</option>
+               <option value="art">Art</option>
+               <option value="cars">Cars</option>
+               <option value="travel">Travel</option>
+         </select>
+            
+         <br><br>
+         <input type="submit" value="Create">
         </form>
-        <a href="index.html">back</a>
+        <a href="index.html">Back</a>
     </div>
+
 
 
 
