@@ -15,7 +15,6 @@ async function getPosts(){
          <button id="update" data-id=${post._id}><a href="../admin/update-post.html?id=${post._id}">update</a></button>
          <button class="delete" data-id=${post._id}>delete</a></button>
      </li>`
-     console.log(formatedDate)
     }
 
     let deletebtn = document.getElementsByClassName("delete")
