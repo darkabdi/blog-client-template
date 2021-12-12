@@ -21,6 +21,8 @@ async function getPost(postId) {
     document.getElementById("update-content").value = textAreaValue;
     document.getElementById("author-input").value = authorValue;
     document.getElementById("title-input").value = titleValue;
+    document.getElementById("showTag").innerHTML = tagsValue;
+    console.log(tagsValue);
   } catch (error) {
     console.log(error);
   }
