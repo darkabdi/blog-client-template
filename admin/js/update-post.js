@@ -7,7 +7,7 @@ window.onload = function () {
 
   console.log(postId);
 };
-
+let tagList = [];
 async function getPost(postId) {
   try {
     let response = await fetch(`http://localhost:5000/posts/${postId}`);
@@ -36,7 +36,7 @@ function submitUpdate(postId) {
       content: formData.get("update-text"),
       author: formData.get("author"),
       title: formData.get("title"),
-      tags: formData.get("tagName"),
+      tags: tagList,
     };
 
     try {
@@ -49,6 +49,7 @@ function submitUpdate(postId) {
       });
       console.log("hej");
       console.log(updatedContent);
+      location.replace("index.html");
     } catch (error) {
       console.log(error);
     }
@@ -58,10 +59,8 @@ function submitUpdate(postId) {
 function addTag() {
   let add = document.getElementById("addTag");
 
-  let tagList = [];
-  tagList.map((tagList) => tagList);
-
-  add.addEventListener("click", function () {
+  add.addEventListener("click", function (e) {
+    e.preventDefault();
     let tagValue = document.getElementById("tags-input").value;
 
     tagList.push(tagValue);
