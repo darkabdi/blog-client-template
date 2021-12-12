@@ -22,7 +22,6 @@ async function getPost(postId) {
     document.getElementById("author-input").value = authorValue;
     document.getElementById("title-input").value = titleValue;
     document.getElementById("showTag").innerHTML = tagsValue;
-    console.log(tagsValue);
   } catch (error) {
     console.log(error);
   }
@@ -66,9 +65,11 @@ function addTag() {
     let tagValue = document.getElementById("tags-input").value;
 
     tagList.push(tagValue);
+    let items = tagList.map((tagValue) => "<li>" + tagValue + "</li>");
+    let html = "<ul>" + items.join("") + "</ul>";
 
-    document.getElementById("showTag").innerHTML = tagList;
+    document.getElementById("showTag").innerHTML = html;
 
-    console.log(tagList);
+    console.log();
   });
 }
