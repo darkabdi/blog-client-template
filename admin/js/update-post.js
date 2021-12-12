@@ -1,10 +1,10 @@
 window.onload = function () {
-  let queryString = location.search;
-
   let postId = new URLSearchParams(window.location.search).get("id");
 
   getPost(postId);
+  addTag();
   submitUpdate(postId);
+
   console.log(postId);
 };
 
@@ -16,6 +16,7 @@ async function getPost(postId) {
     let textAreaValue = post.content;
     let authorValue = post.author;
     let titleValue = post.title;
+    let tagsValue = post.tags;
 
     document.getElementById("update-content").value = textAreaValue;
     document.getElementById("author-input").value = authorValue;
@@ -35,6 +36,7 @@ function submitUpdate(postId) {
       content: formData.get("update-text"),
       author: formData.get("author"),
       title: formData.get("title"),
+      tags: formData.get("tagName"),
     };
 
     try {
@@ -47,9 +49,25 @@ function submitUpdate(postId) {
       });
       console.log("hej");
       console.log(updatedContent);
-      location.replace("index.html");
     } catch (error) {
       console.log(error);
     }
+  });
+}
+
+function addTag() {
+  let add = document.getElementById("addTag");
+
+  let tagList = [];
+  tagList.map((tagList) => tagList);
+
+  add.addEventListener("click", function () {
+    let tagValue = document.getElementById("tags-input").value;
+
+    tagList.push(tagValue);
+
+    document.getElementById("showTag").innerHTML = tagList;
+
+    console.log(tagList);
   });
 }
