@@ -2,6 +2,14 @@ header{
     text-align: right;
 }
 
+body{
+    background-color: antiquewhite;
+}
+
+section{
+    background-color:rgb(228, 221, 213)
+}
+
 body, header{
     padding: 0 25%;
 }
