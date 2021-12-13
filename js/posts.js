@@ -25,8 +25,8 @@ function createElements (data){
             <article>
             <h2>${post.title}</h2>
             <p><i>${post.author} | ${editDateData(post.date)}</i></p>
-            <p>${contentMaxLength(post.content)}</p>
-            <span><a href="post.html?_id=${post._id}">Read more</a>
+            <p>${contentMaxLength(post.content, post._id)}</p>
+            <p><b>Tags: </b>${tagsLoop(post.tags)}</p>
             </article>
         `
     }
@@ -44,11 +44,26 @@ function editDateData (date){
 }
 
 
-function contentMaxLength (content){
+function contentMaxLength (content, id){
     if(content.length > 100){
-        let editedContent = content.slice(0, 100) + '...';
+        let editedContent = content.slice(0, 100) + '... ';
+        editedContent += `<span><a href="post.html?_id=${id}">Read more</a></span>`
         return editedContent;
     }else{
         return content;
     }
 };
+
+
+function tagsLoop (tagsArray){
+    
+    if(tagsArray.length > 0){
+        tagsList = '';
+        for (tag of tagsArray){
+            tagsList += tag + ', ';
+        }
+        return tagsList.slice(0,-2);
+    }else{
+        return tagsList = `<i>None</i>`;
+    }
+}
