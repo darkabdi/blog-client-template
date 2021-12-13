@@ -66,4 +66,4 @@ function tagsLoop (tagsArray){
     }else{
         return tagsList = `<i>None</i>`;
     }
-}
+};
