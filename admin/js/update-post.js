@@ -18,10 +18,12 @@ async function getPost(postId) {
     let titleValue = post.title;
     let tagsValue = post.tags;
 
+    let oldItems = tagsValue.map((tagValue) => "<li>" + tagValue + "</li>");
+    let oldHtml = "<ul>" + oldItems.join("") + "</ul>";
     document.getElementById("update-content").value = textAreaValue;
     document.getElementById("author-input").value = authorValue;
     document.getElementById("title-input").value = titleValue;
-    document.getElementById("showTag").innerHTML = tagsValue;
+    document.getElementById("showTag").innerHTML = oldHtml;
   } catch (error) {
     console.log(error);
   }
