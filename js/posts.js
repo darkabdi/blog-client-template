@@ -39,16 +39,14 @@ function createElements (data){
 function editDateData (date){
 
     let editedDateData = date.replace('T', ' ');
-    editedDateData = editedDateData.slice(0, -8);
-    return editedDateData;
+    return editedDateData.slice(0, -8);
 }
 
 
 function contentMaxLength (content, id){
     if(content.length > 100){
         let editedContent = content.slice(0, 100) + '... ';
-        editedContent += `<span><a href="post.html?_id=${id}">Read more</a></span>`
-        return editedContent;
+        return editedContent += `<span><a href="post.html?_id=${id}">Read more</a></span>`;
     }else{
         return content;
     }

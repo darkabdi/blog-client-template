@@ -13,7 +13,7 @@ async function getSinglePost(){
         createElement(data);
 
     } catch (error) {
-        singleBlogPostSection.innerHTML = error;
+        singleBlogPostSection.innerHTML = 'You done messed up: ' + error;
     }
 }
 
@@ -38,8 +38,7 @@ function createElement(data){
 function editDateData (date){
 
     let editedDateData = date.replace('T', ' ');
-    editedDateData = editedDateData.slice(0, -8);
-    return editedDateData;
+    return editedDateData.slice(0, -8);
 }
 
 
