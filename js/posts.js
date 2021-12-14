@@ -13,33 +13,30 @@ async function getAllPosts(){
 
     } catch (error) {
         blogPostsSection.html('You done messed up: (' + error + ')');
-    }
-}
+    };
+};
 
 
 function createElements (data){
 
-    let result = '';
     for (post of data){
-        result += `
+        blogPostsSection.append(`
             <article>
             <h2>${post.title}</h2>
             <p><i>${post.author} | ${editDateData(post.date)}</i></p>
             <p>${contentMaxLength(post.content, post._id)}</p>
             <p><b>Tags: </b>${tagsLoop(post.tags)}</p>
             </article>
-        `
-    }
-
-    blogPostsSection.html(result);
-}
+        `)
+    };
+};
 
 
 function editDateData (date){
 
     let editedDateData = date.replace('T', ' ');
     return editedDateData.slice(0, -8);
-}
+};
 
 
 function contentMaxLength (content, id){
@@ -48,7 +45,7 @@ function contentMaxLength (content, id){
         return editedContent += `<span><a href="post.html?_id=${id}">Read more</a></span>`;
     }else{
         return content;
-    }
+    };
 };
 
 
@@ -62,7 +59,7 @@ function tagsLoop (tagsArray){
         return tagsList.slice(0,-2);
     }else{
         return tagsList = `<i>None</i>`;
-    }
+    };
 };
 
 

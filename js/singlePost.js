@@ -16,30 +16,29 @@ async function getSinglePost(){
 
     } catch (error) {
         singleBlogPostSection.html('You done messed up: (' + error + ')');
-    }
-}
+    };
+};
 
 
 function createElement(data){
     
-    let result = `
+    singleBlogPostSection.html(`
     <article>
     <h2>${data.title}</h2>
     <p><i>${data.author} | ${editDateData(data.date)}</i></p>
     <p>${data.content}</p>
     <p><b>Tags: </b>${tagsLoop(data.tags)}</p>
     </article>
-    `;
+    `);
 
-    singleBlogPostSection.html(result);
-}
+};
 
 
 function editDateData (date){
 
     let editedDateData = date.replace('T', ' ');
     return editedDateData.slice(0, -8);
-}
+};
 
 
 function tagsLoop (tagsArray){
@@ -52,5 +51,5 @@ function tagsLoop (tagsArray){
         return tagsList.slice(0,-2);
     }else{
         return tagsList = `<i>None</i>`;
-    }
+    };
 };
