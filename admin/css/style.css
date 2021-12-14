@@ -1,24 +1,29 @@
 #create-container {
   display: flex;
   flex-direction: column;
-  background-color: rgb(53, 104, 163);
+  background-color: #6c95a0ec;
   align-items: center;
-  margin: 5px;
   height: 100%;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 5px;
 }
 
 #create-form {
   display: flex;
   flex-direction: column;
-  width: 500px;
-  height: 750px;
-  background-color: lightskyblue;
-
+  width: 800px;
+  height: 650px;
+  background-color: #ffffff70;
+  border: 2px solid white;
   border-radius: 5px;
   font-weight: bold;
-  padding: 5px;
+  padding: 35px;
+}
+
+#title-input,
+#author-input,
+#submit {
+  height: 40px;
 }
 
 #tags,
@@ -28,7 +33,8 @@
 
 .inputForm:hover,
 #create-contents:hover,
-#tags:hover {
+#tags:hover,
+#submit:hover {
   color: black;
   background-color: lightgray;
 }
@@ -38,10 +44,20 @@
   color: lightskyblue;
 }
 
+label {
+  margin: auto;
+}
+option {
+  margin-left: 5px;
+  font-size: bold;
+  font-size: larger;
+  padding: 2px;
+}
+
 #headline {
   font-family: Georgia, "Times New Roman", Times, serif;
   text-decoration: underline;
-  color:lightgrey;
+  color: lightgrey;
 }
 ::placeholder {
   color: grey;
