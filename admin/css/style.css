@@ -1,0 +1,23 @@
+body{
+    background-color:#faebd7;
+}
+
+#create-container {
+  display: flex;
+  flex-direction: column;
+  background-color:#FAEBD7;
+  align-items: center;
+  margin:20px;
+  border:1px solid black;
+  border-radius: 5px;
+} 
+
+#create-form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background-color:rgb(228, 221, 213);
+  border:1px solid black;
+  border-radius: 5px;
+}
+
