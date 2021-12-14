@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <div id="update-container">
         <h1>Update Post</h1>
         <form id="update-form">
-            <label for="">Author</label><br>
+            <label for="">Author</label>
             <input name="author" id="author-input" type="text"><br>
-            <label for="">Title</label><br>
+            <label for="">Title</label>
             <input name="title" id="title-input" type="text"><br>
+            <label for="">Tags</label>
+            <input name="tags" id="tags-input" type="text"><br>
+            <button id="addTag">Add</button>
+            <div name="tagName" id="showTag">
+
+
+            </div>
+
+
             <label for="">Content</label><br>
             <textarea name="update-text" id="update-content" cols="30" rows="10"></textarea>
             <br><input type="submit" value="Update">
