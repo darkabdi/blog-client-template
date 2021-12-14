@@ -1,9 +1,10 @@
 #create-container {
   display: flex;
   flex-direction: column;
-  background-color: rgb(105, 143, 138);
+  background-color: rgb(53, 104, 163);
   align-items: center;
   margin: 5px;
+  height: 100%;
   border: 1px solid black;
   border-radius: 5px;
 }
@@ -12,29 +13,35 @@
   display: flex;
   flex-direction: column;
   width: 500px;
-  min-height: 400px;
-  background-color: rgb(156, 194, 156);
-  border: 1px solid black;
+  height: 750px;
+  background-color: lightskyblue;
+
   border-radius: 5px;
   font-weight: bold;
+  padding: 5px;
+}
+
+#tags,
+.inputForm {
+  background-color: lightsteelblue;
 }
 
 .inputForm:hover,
-#create-content:hover,
+#create-contents:hover,
 #tags:hover {
   color: black;
   background-color: lightgray;
 }
 
 .create-links {
-  font-size: large;
-  font-weight: bold;
-  color: blue;
+  font-size: larger;
+  color: lightskyblue;
 }
 
 #headline {
   font-family: Georgia, "Times New Roman", Times, serif;
   text-decoration: underline;
+  color:lightgrey;
 }
 ::placeholder {
   color: grey;

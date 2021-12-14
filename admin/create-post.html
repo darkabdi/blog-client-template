@@ -5,29 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create post</title>
     <link rel="stylesheet" href="css/style.css">
-    
+
 </head>
 
 <body>
 
 
     <div id="create-container">
-        <a class="Create-links" href="../index.html">Blogg</a>
-    
-        <h1>Create a new Post</h1>
+        <a class="create-links" href="../index.html">Blogg</a>
+
+        <h1 id="headline">Create a new Post</h1>
         <form id="create-form">
             <label for="author-input">Author</label><br>
-            <input name="author" id="author-input" type="text"><br>
+            <input class="inputForm" name="author" id="author-input" type="text" placeholder="Author"><br>
 
             <label for="title-input">Title</label><br>
-            <input name="title" id="title-input" type="text"><br>
+            <input class="inputForm" name="title" id="title-input" type="text" placeholder="Title" ><br>
 
             <label for="create-content">Content</label><br>
-            <textarea name="create-text" id="create-content" cols="30" rows="10"></textarea><br>
+            <textarea class="inputForm"name="create-text" id="create-content" cols="35" ="1" rows="10"
+                placeholder="Write your content here.."></textarea><br>
 
             <label for="tags">Tags</label><br>
             <select name="tags" id="tags" size="7" multiple>
-                <option value="economics">Economics</option>
+                <option value="nature">Nature</option>
                 <option value="politics">Politics</option>
                 <option value="sport">Sport</option>
                 <option value="food">Food</option>
@@ -39,9 +40,9 @@
             <br><br>
             <input type="submit" value="Create">
         </form>
-        <a class="Create-links" href="index.html">Back</a>
+        <a class="create-links" href="index.html">Back</a>
     </div>
-   
+
 
     <script src="js/create-post.js"></script>
 </body>
