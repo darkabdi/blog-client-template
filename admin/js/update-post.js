@@ -18,7 +18,9 @@ async function getPost(postId) {
     let titleValue = post.title;
     let tagsValue = post.tags;
 
-    let oldItems = tagsValue.map((tagValue) => "<li>" + tagValue + "</li>");
+    let oldItems = tagsValue.map(
+      (tagValue) => "<li>" + "#" + tagValue + "</li>"
+    );
     let oldHtml = "<ul>" + oldItems.join("") + "</ul>";
     document.getElementById("update-content").value = textAreaValue;
     document.getElementById("author-input").value = authorValue;
@@ -67,7 +69,7 @@ function addTag() {
     let tagValue = document.getElementById("tags-input").value;
 
     tagList.push(tagValue);
-    let items = tagList.map((tagValue) => "<li>" + tagValue + "</li>");
+    let items = tagList.map((tagValue) => "<li>" + "#" + tagValue + "</li>");
     let html = "<ul>" + items.join("") + "</ul>";
 
     document.getElementById("showTag").innerHTML = html;
