@@ -1,23 +1,41 @@
-body{
-    background-color:#faebd7;
-}
-
 #create-container {
   display: flex;
   flex-direction: column;
-  background-color:#FAEBD7;
+  background-color: rgb(105, 143, 138);
   align-items: center;
-  margin:20px;
-  border:1px solid black;
+  margin: 5px;
+  border: 1px solid black;
   border-radius: 5px;
-} 
+}
 
 #create-form {
   display: flex;
   flex-direction: column;
   width: 500px;
-  background-color:rgb(228, 221, 213);
-  border:1px solid black;
+  min-height: 400px;
+  background-color: rgb(156, 194, 156);
+  border: 1px solid black;
   border-radius: 5px;
+  font-weight: bold;
 }
 
+.inputForm:hover,
+#create-content:hover,
+#tags:hover {
+  color: black;
+  background-color: lightgray;
+}
+
+.create-links {
+  font-size: large;
+  font-weight: bold;
+  color: blue;
+}
+
+#headline {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-decoration: underline;
+}
+::placeholder {
+  color: grey;
+}
