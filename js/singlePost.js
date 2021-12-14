@@ -2,6 +2,8 @@ window.onload = function (){
     getSinglePost()
 }
 
+let singleBlogPostSection = $('#singleBlogPostSection');
+
 urlParameters = new URLSearchParams(window.location.search);
 let urlPunID = urlParameters.get('_id');
 
@@ -13,15 +15,13 @@ async function getSinglePost(){
         createElement(data);
 
     } catch (error) {
-        singleBlogPostSection.innerHTML = 'You done messed up: ' + error;
+        singleBlogPostSection.html('You done messed up: (' + error + ')');
     }
 }
 
 
 function createElement(data){
     
-    let singleBlogPostSection = document.getElementById('singleBlogPostSection');
-
     let result = `
     <article>
     <h2>${data.title}</h2>
@@ -31,7 +31,7 @@ function createElement(data){
     </article>
     `;
 
-    singleBlogPostSection.innerHTML = result;
+    singleBlogPostSection.html(result);
 }
 
 

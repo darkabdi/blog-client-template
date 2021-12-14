@@ -2,6 +2,8 @@ window.onload = function(){
     getAllPosts();
 }
 
+let blogPostsSection = $('#blogPostsSection');
+
 async function getAllPosts(){
     try {
         let response = await fetch ('http://localhost:5000/posts');
@@ -10,14 +12,12 @@ async function getAllPosts(){
         createElements (data);
 
     } catch (error) {
-        blogPostsSection.innerHTML = 'You done messed up: ' + error;
+        blogPostsSection.html('You done messed up: (' + error + ')');
     }
 }
 
 
 function createElements (data){
-    
-    let blogPostsSection = document.getElementById('blogPostsSection')
 
     let result = '';
     for (post of data){
@@ -31,8 +31,7 @@ function createElements (data){
         `
     }
 
-    blogPostsSection.innerHTML = result;
-
+    blogPostsSection.html(result);
 }
 
 
@@ -65,3 +64,7 @@ function tagsLoop (tagsArray){
         return tagsList = `<i>None</i>`;
     }
 };
+
+
+let länkar = $('a');
+console.log(länkar);
