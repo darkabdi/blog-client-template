@@ -13,6 +13,7 @@ async function getSinglePost(){
         let data = await response.json()
         
         createElement(data);
+        $('article').fadeIn(1500)
 
     } catch (error) {
         singleBlogPostSection.html('You done messed up: (' + error + ')');
@@ -21,7 +22,6 @@ async function getSinglePost(){
 
 
 function createElement(data){
-    
     singleBlogPostSection.html(`
     <article>
     <h2>${data.title}</h2>
@@ -30,12 +30,11 @@ function createElement(data){
     <p><b>Tags: </b>${tagsLoop(data.tags)}</p>
     </article>
     `);
-
 };
 
 
 function editDateData (date){
-
+    
     let editedDateData = date.replace('T', ' ');
     return editedDateData.slice(0, -8);
 };
