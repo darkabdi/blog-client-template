@@ -10,6 +10,7 @@ async function getAllPosts(){
         let data = await response.json();
 
         createElements (data);
+        fadeIn();
 
     } catch (error) {
         blogPostsSection.html('You done messed up: (' + error + ')');
@@ -27,7 +28,7 @@ function createElements (data){
             <p>${contentMaxLength(post.content, post._id)}</p>
             <p><b>Tags: </b>${tagsLoop(post.tags)}</p>
             </article>
-        `)
+        `);
     };
 };
 
@@ -63,5 +64,12 @@ function tagsLoop (tagsArray){
 };
 
 
-let länkar = $('a');
-console.log(länkar);
+function fadeIn (){
+
+    let nummer = 500;
+    for (let i = 0; i < $('article').length; i++){
+        let article = $('article')[i];
+        $(article).fadeIn(nummer)
+        nummer += 750;
+    };
+};
