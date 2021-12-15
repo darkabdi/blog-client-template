@@ -16,7 +16,7 @@ h1, h2{
 }
 
 section{
-    background-color:rgb(228, 221, 213)
+    background-color:rgb(228, 221, 213);
 }
 
 body, header{
@@ -30,4 +30,10 @@ section, article{
 article{
     text-align: center;
     padding: 30px;
+    display: none;
+}
+
+article:hover{
+    transform: scaleX(1.01) scaleY(1.03);
+    background-color: rgb(211, 201, 190);
 }
