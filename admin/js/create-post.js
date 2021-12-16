@@ -29,10 +29,3 @@ function CreateNewPost() {
   });
 }
 
-// function addTag () {
-
-// let select = document.getElementById('tags');
-// let value = select.options[select.selectedIndex].value;
-// console.log(value);
-
-// }
