@@ -1,0 +1,33 @@
+body {
+  background-color: #6c95a0ec;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#blogPostsSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+#tableData {
+  border-radius: 10px;
+  background-color: #ffffff70;
+  width: 50%;
+  box-shadow: inset 0 -3em 3em rgba(255, 255, 255, 0.1),
+    0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+th {
+  height: 50px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+td {
+  text-align: center;
+  height: 40px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
