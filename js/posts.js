@@ -69,7 +69,7 @@ function fadeIn (){
     let nummer = 500;
     for (let i = 0; i < $('article').length; i++){
         let article = $('article')[i];
-        $(article).fadeIn(nummer)
+        $(article).fadeIn(nummer);
         nummer += 750;
     };
 };
