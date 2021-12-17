@@ -8,8 +8,18 @@ let tableData = document.getElementById('tableData');
 async function getPosts(){
     try {
         let response = await (await fetch('http://localhost:5000/posts')).json();
-    
-    let posts ="";
+
+    createElements(response);
+    deleteButtons();
+   
+    } catch (error) {
+        tableData.innerHTML = ('Something went wrong: (' + error + ')');
+    };
+};
+
+
+function createElements (response){
+    let posts = "";
     for (let post of response){
         posts += `
             <tr>
@@ -23,14 +33,8 @@ async function getPosts(){
                 </td>
             </tr>`;
     };
-    
-    tableData.innerHTML += posts;
 
-    deleteButtons();
-   
-    } catch (error) {
-        tableData.innerHTML = ('Something went wrong: (' + error + ')');
-    };
+    tableData.innerHTML += posts;
 };
 
 
