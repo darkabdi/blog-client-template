@@ -11,6 +11,7 @@ async function getAllPosts(){
 
         createElements (data);
         fadeIn();
+        explodingLinks ();
 
     } catch (error) {
         blogPostsSection.html('You done messed up: (' + error + ')');
@@ -43,7 +44,7 @@ function editDateData (date){
 function contentMaxLength (content, id){
     if(content.length > 100){
         let editedContent = content.slice(0, 100) + '... ';
-        return editedContent += `<span><a href="post.html?_id=${id}">Read more</a></span>`;
+        return editedContent += `<span><a class='explodingLinks' href="post.html?_id=${id}">Read more</a></span>`;
     }else{
         return content;
     };
@@ -72,4 +73,17 @@ function fadeIn (){
         $(article).fadeIn(nummer);
         nummer += 750;
     };
+};
+
+function explodingLinks (){
+    
+    $('.explodingLinks').click(function(e){
+        e.preventDefault();
+        $(this).effect('explode', 1100);
+        
+        let self = this.href;
+        setTimeout(function(){
+            location.replace(self)
+        }, 1000);
+    });
 };
